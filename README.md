@@ -1,8 +1,8 @@
 # 04376802720
-##screenshots
-
+## screenshots
+### whole ans when we did'nt consider delay
 ![image](https://github.com/priyalj52/04376802720/assets/94099575/dc8a59e1-dda0-4dc2-bb36-85222b5b3278)
-#whole ans
+
      [
     {
         "trainName": "Hyderabad Exp",
@@ -59,5 +59,8 @@
         "delayedBy": 16
     }
 ]
+## on delay
+![image](https://github.com/priyalj52/04376802720/assets/94099575/31c290df-55fb-4d23-9d74-3c210c2e9a12)
+
 
 
