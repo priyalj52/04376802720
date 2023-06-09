@@ -33,7 +33,7 @@ app.get('/', async (req, res) => {
   return departureTimes > thirtyMin && departureTimes <= twelvehrsLater;
 });
     // Sorting train schedules based on price in ascending order
-    trainSchedule.data.sort((a, b) => a.price.sleeper - b.price.sleeper);
+    trainSchedule.sort((a, b) => a.price.sleeper - b.price.sleeper);
 
     // Sorting train schedules based on available tickets in descending order
     trainSchedule.sort((a, b) => b.seatsAvailable.sleeper - a.seatsAvailable.sleeper);
@@ -44,11 +44,14 @@ app.get('/', async (req, res) => {
       departureTimeA.setHours(a.departureTime.Hours);
       departureTimeA.setMinutes(a.departureTime.Minutes);
       departureTimeA.setSeconds(a.departureTime.Seconds);
+      departureTimeA.setMinutes(departureTimeA.getMinutes() + a.delayedBy); //  delays
+
 
       const departureTimeB = new Date();
       departureTimeB.setHours(b.departureTime.Hours);
       departureTimeB.setMinutes(b.departureTime.Minutes);
       departureTimeB.setSeconds(b.departureTime.Seconds);
+      departureTimeA.setMinutes(departureTimeB.getMinutes() + b.delayedBy); // delays
 
       return departureTimeB.getTime() - departureTimeA.getTime();
     });
